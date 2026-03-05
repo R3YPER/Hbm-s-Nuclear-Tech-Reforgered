@@ -16,7 +16,7 @@ import static com.RNuclearTeam.hntrm.Main.MODID;
 
 public class RegBlocks {
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, MODID);
-    public static final RegistryObject<Block> ALUMINIUM_ORE = registerBlock("aluminium_ore", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE)));
+    public static final RegistryObject<Block> ALUMINIUM_ORE = registerBlock("aluminium_ore", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
 
     private static <T extends Block> RegistryObject<T> registerBlock (String name, Supplier<T> block) {
         RegistryObject<T> ret = BLOCKS.register(name, block);
