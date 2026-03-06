@@ -1,8 +1,8 @@
 
 package com.RNuclearTeam.hntrm;
 
-import com.RNuclearTeam.hntrm.register.RegBlocks;
-import com.RNuclearTeam.hntrm.register.RegItems;
+import com.RNuclearTeam.hntrm.register.ModBlocks;
+import com.RNuclearTeam.hntrm.register.ModItems;
 import com.mojang.logging.LogUtils;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -23,8 +23,8 @@ public class Main {
     public Main() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
-        RegBlocks.register(modEventBus);
-        RegItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
+        ModItems.register(modEventBus);
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);

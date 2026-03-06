@@ -7,7 +7,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 
 import static com.RNuclearTeam.hntrm.Main.MODID;
 
-public class RegItems {
+public class ModItems {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, MODID);
 
     public static void register(IEventBus eventBus) {

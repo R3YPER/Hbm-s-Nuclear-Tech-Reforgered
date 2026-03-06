@@ -14,9 +14,9 @@ import java.util.function.Supplier;
 
 import static com.RNuclearTeam.hntrm.Main.MODID;
 
-public class RegBlocks {
+public class ModBlocks {
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, MODID);
-    public static final RegistryObject<Block> ALUMINIUM_ORE = registerBlock("aluminium_ore", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+    public static final RegistryObject<Block> ALUMINIUM_ORE = registerBlock("aluminium_ore", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).requiresCorrectToolForDrops().strength(5.0F,10.0F)));
 
     private static <T extends Block> RegistryObject<T> registerBlock (String name, Supplier<T> block) {
         RegistryObject<T> ret = BLOCKS.register(name, block);
@@ -24,7 +24,7 @@ public class RegBlocks {
         return ret;
     }
     private static <T extends Block> RegistryObject<Item> registerBlockItem(String name, RegistryObject<T> block) {
-        return RegItems.ITEMS.register(name, ()-> new BlockItem(block.get(), new Item.Properties()));
+        return ModItems.ITEMS.register(name, ()-> new BlockItem(block.get(), new Item.Properties()));
     }
 
     public static void register(IEventBus eventBus) {
